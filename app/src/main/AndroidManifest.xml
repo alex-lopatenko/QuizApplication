@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.quizapplication">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApplication">
+        <activity
+            android:name=".activity.AboutDevActivity"
+            android:exported="true"
+            android:label="@string/title_activity_about_dev"
+            android:theme="@style/Theme.QuizApplication.NoActionBar" />
+        <activity
+            android:name=".activity.CustomUrlActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.BaseActivity"
+            android:exported="true" />
         <activity
             android:name=".activity.SplashActivity"
             android:exported="true">
@@ -20,9 +34,7 @@
         </activity>
         <activity
             android:name=".activity.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

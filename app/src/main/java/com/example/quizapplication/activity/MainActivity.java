@@ -1,12 +1,15 @@
 package com.example.quizapplication.activity;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.quizapplication.R;
+import com.example.quizapplication.utilities.ActivityUtilities;
 import com.example.quizapplication.utilities.AppUtilities;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -19,7 +22,10 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+
+    private Activity activity;
+    private Context context;
 
     private Toolbar toolbar;
 
@@ -33,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        activity = MainActivity.this;
+        context= getApplicationContext();
+
         final IProfile profile = new ProfileDrawerItem().withIcon(R.drawable.ic_dev);
 
         header = new AccountHeaderBuilder()
@@ -42,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
                 .withOnAccountHeaderProfileImageListener(new AccountHeader.OnAccountHeaderProfileImageListener() {
                     @Override
                     public boolean onProfileImageClick(View view, IProfile profile, boolean current) {
-                        //Invoke CustomUrlActivity
+                        ActivityUtilities.getInstance().invokeCustomUrlActivity(activity, CustomUrlActivity.class,
+                                getResources().getString(R.string.site), getResources().getString(R.string.site_url), false);
                         return false;
                     }
 
@@ -79,7 +89,41 @@ public class MainActivity extends AppCompatActivity {
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        //Add Drawer items Activity
+
+                        if (drawerItem != null) {
+                            Intent intent = null;
+                            if (drawerItem.getIdentifier() == 10) {
+                                ActivityUtilities.getInstance().invokeNewActivity(activity, AboutDevActivity.class, false);
+                            } else if (drawerItem.getIdentifier() == 20) {
+                                AppUtilities.youtubeLink(activity);
+                            }
+
+                            } else if (drawerItem.getIdentifier() == 21) {
+                                AppUtilities.facebookLink(activity);
+
+                            } else if (drawerItem.getIdentifier() == 22) {
+                                AppUtilities.twitterLink(activity);
+
+                            } else if (drawerItem.getIdentifier() == 23) {
+                                AppUtilities.googlePlusLink(activity);
+
+                            } else if (drawerItem.getIdentifier() == 30) {
+                                // TODO: invoke SettingsActivity
+
+                            } else if (drawerItem.getIdentifier() == 31) {
+                                AppUtilities.rateThisApp(activity);
+
+                            } else if (drawerItem.getIdentifier() == 32) {
+                                AppUtilities.shareApp(activity);
+
+                            } else if (drawerItem.getIdentifier() == 33) {
+                                ActivityUtilities.getInstance().invokeCustomUrlActivity(activity, CustomUrlActivity.class,
+                                        getResources().getString(R.string.privacy), getResources().getString(R.string.privacy_url), false);
+
+                            } else if (drawerItem.getIdentifier() == 40) {
+
+                        }
+
                         return false;
                     }
                 })

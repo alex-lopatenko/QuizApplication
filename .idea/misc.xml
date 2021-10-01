@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/drawable/badge_circle.xml" value="0.1" />
+        <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_about_dev.xml" value="0.1" />
+        <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_custom_url.xml" value="0.1" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/toolbar_main.xml" value="0.1" />
+        <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/view_loader.xml" value="0.2" />
       </map>
     </option>
   </component>
