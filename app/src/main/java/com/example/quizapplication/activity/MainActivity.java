@@ -7,8 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quizapplication.R;
+import com.example.quizapplication.adapters.CategoryAdapter;
+import com.example.quizapplication.constants.AppConstants;
+import com.example.quizapplication.quiz.CategoryModel;
 import com.example.quizapplication.utilities.ActivityUtilities;
 import com.example.quizapplication.utilities.AppUtilities;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -22,6 +27,15 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 public class MainActivity extends BaseActivity {
 
     private Activity activity;
@@ -32,6 +46,10 @@ public class MainActivity extends BaseActivity {
     private AccountHeader header = null;
     private Drawer drawer = null;
 
+    private ArrayList<CategoryModel> categoryList;
+    private CategoryAdapter adapter = null;
+    private RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +57,19 @@ public class MainActivity extends BaseActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        recyclerView = (RecyclerView) findViewById(R.id.rvContent);
+        recyclerView.setLayoutManager(new GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL,
+                false));
+
+        categoryList = new ArrayList<>();
+        adapter = new CategoryAdapter(context, activity, categoryList);
+        recyclerView.setAdapter(adapter);
+
         activity = MainActivity.this;
         context= getApplicationContext();
+
+        initLoader();
+        loadData();
 
         final IProfile profile = new ProfileDrawerItem().withIcon(R.drawable.ic_dev);
 
@@ -140,5 +169,51 @@ public class MainActivity extends BaseActivity {
         } else {
             AppUtilities.tapPromptToExit(this);
         }
+    }
+
+    private void loadData() {
+        showLoader();
+        loadJson();
+    }
+
+    private void loadJson() {
+        StringBuffer sb = new StringBuffer();
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new InputStreamReader(getAssets().open(AppConstants.CONTENT_FILE)));
+            String temp;
+            while ((temp = br.readLine()) != null)
+                sb.append(temp);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                br.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        parseJson(sb.toString());
+    }
+
+    private void parseJson(String jsonData) {
+        try {
+            JSONObject jsonObject = new JSONObject(jsonData);
+            JSONArray jsonArray = jsonObject.getJSONArray(AppConstants.JSON_KEY_ITEMS);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject object = jsonArray.getJSONObject(i);
+            }
+
+            String categoryId = object.getString(AppConstants.JSON_KEY_CATEGORY_ID);
+            String categoryName = object.getString(AppConstants.JSON_KEY_CATEGORY_NAME);
+
+            categoryList.add(new CategoryModel(categoryId, categoryName));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        hideLoader();
+        adapter.notifyDataSetChanged();
     }
 }
