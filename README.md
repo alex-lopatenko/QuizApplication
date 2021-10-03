@@ -1,7 +1,7 @@
 Project name: Quiz Application <br/>
 Min SDK Version: 17 <br/>
 Compile SDK Version: 30 <br/>
-Activity: 1 <br/>
+Activity: 7 <br/>
 Technology: Android SDK, Java <br/>
 Description: Quiz app to test your knowledge.
 <br/>
