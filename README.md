@@ -6,9 +6,9 @@ Technology: Android SDK, Java <br/>
 Description: Quiz app to test your knowledge.
 <br/>
 <br/>
-![alt text](https://github.com/alex-lopatenko/QuizApplication/prew-img/prew.PNG)<br/>
-![alt text](https://github.com/alex-lopatenko/QuizApplication/prew-img/prew-1.PNG)<br/>
-![alt text](https://github.com/alex-lopatenko/QuizApplication/prew-img/prew-2.PNG)<br/>
-![alt text](https://github.com/alex-lopatenko/QuizApplication/prew-img/prew-3.PNG)<br/>
-![alt text](https://github.com/alex-lopatenko/QuizApplication/prew-img/prew-4.PNG)<br/>
-![alt text](https://github.com/alex-lopatenko/QuizApplication/prew-img/prew-5.PNG)<br/>
+
+![alt text](https://github.com/alex-lopatenko/QuizApplication/blob/master/prew-img/prew-1.PNG)<br/>
+![alt text](https://github.com/alex-lopatenko/QuizApplication/blob/master/prew-img/prew-2.PNG)<br/>
+![alt text](https://github.com/alex-lopatenko/QuizApplication/blob/master/prew-img/prew-3.PNG)<br/>
+![alt text](https://github.com/alex-lopatenko/QuizApplication/blob/master/prew-img/prew-4.PNG)<br/>
+![alt text](https://github.com/alex-lopatenko/QuizApplication/blob/master/prew-img/prew-5.PNG)<br/>
