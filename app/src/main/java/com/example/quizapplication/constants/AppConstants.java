@@ -2,6 +2,9 @@ package com.example.quizapplication.constants;
 
 public class AppConstants {
 
+    public static final String APP_PREF_NAME = "quiz_app_pref";
+    public static final String KEY_SOUND = "sound";
+
     public static final int BUNDLE_KEY_ZERO_INDEX = 0;
     public static final int BUNDLE_KEY_FIRST_INDEX = 1;
     public static final int BUNDLE_KEY_SECOND_INDEX = 2;
@@ -61,4 +64,5 @@ public class AppConstants {
     // pie chart constants
     public static final float TRANSPARENT_CIRCLE_RADIUS = 65f;
     public static final int ANIMATION_VALUE = 2000;
+
 }

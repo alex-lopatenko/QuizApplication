@@ -8,9 +8,14 @@
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_about_dev.xml" value="0.1" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_custom_url.xml" value="0.1" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_quiz.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_quiz_prompt.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_quiz_propt.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/content_main.xml" value="0.18177083333333333" />
+        <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/item_category_recycler.xml" value="0.1" />
+        <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/item_quiz.xml" value="0.1" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/toolbar_main.xml" value="0.1" />
         <entry key="..\:/Users/alexe/AndroidStudioProjects/QuizApplication/app/src/main/res/layout/view_loader.xml" value="0.2" />
